@@ -1001,4 +1001,11 @@ header {
         word-wrap: break-word !important;
         text-overflow: clip !important;
     }
+
+    .about-title {
+        font-size: clamp(2rem, 12vw, 3.5rem) !important;
+        line-height: 1.1 !important;
+        word-wrap: break-word !important;
+        width: 100% !important;
+    }
 }
