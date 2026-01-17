@@ -889,16 +889,23 @@ header {
     /* CTA Button - Stack content if needed or reduce size */
     .cta-button {
         width: 100%;
-        max-width: 320px;
+        max-width: 340px;
         padding: 1rem;
         font-size: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 12px;
         white-space: normal;
-        /* Allow text wrapping */
         text-align: center;
-        line-height: 1.2;
+        line-height: 1.3;
+    }
+
+    .cta-button svg {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        flex-shrink: 0;
     }
 
     /* Grid layout fixes - Force Single Column */
@@ -969,5 +976,29 @@ header {
     /* General Padding */
     .container {
         padding: 0 1.5rem;
+    }
+
+    /* Force Fixes for Mobile */
+    .cta-button svg {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        flex-shrink: 0;
+    }
+
+    .about-card {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 1.5rem !important;
+        overflow: visible !important;
+    }
+
+    .about-item-title,
+    .about-item-desc {
+        white-space: normal !important;
+        overflow: visible !important;
+        word-wrap: break-word !important;
+        text-overflow: clip !important;
     }
 }
