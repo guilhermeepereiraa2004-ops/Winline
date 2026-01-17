@@ -1,0 +1,291 @@
+/* ===================================
+   UNIFIED ABOUT SECTION
+   =================================== */
+
+.about-unified {
+    padding: var(--spacing-3xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    /* Dark Slate Gradient (No Light Blue) */
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 0;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--color-primary),
+            transparent);
+    opacity: 0.5;
+}
+
+/* About Header - Premium Redesign */
+.about-header {
+    text-align: center;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    background: transparent;
+    /* Removido radial gradient para evitar linha visual */
+    border-bottom: none;
+    position: relative;
+    overflow: visible;
+}
+
+/* Ambient Background Light */
+.about-header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    background: var(--color-primary);
+    filter: blur(80px);
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about-badge {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    color: #ffd700;
+    /* Gold touch */
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: var(--spacing-md);
+    padding: 8px 16px;
+    border-radius: 30px;
+    background: rgba(255, 215, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.about-title {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+
+    /* Premium Gradient Text Animation */
+    background: linear-gradient(to right,
+            #ffffff 20%,
+            #a0a0a0 40%,
+            #ffffff 60%,
+            #ffffff 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 5s linear infinite, fadeInUp 0.8s ease-out 0.2s backwards;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.about-subtitle {
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+/* Animations */
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Grid Enhanced */
+.about-grid {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background: transparent;
+    /* Fundo transparente para unificar com o pai */
+    border-top: none;
+    /* Garantindo sem borda no topo */
+    flex-wrap: wrap;
+    /* Permite quebrar em telas menores */
+    padding-bottom: 20px;
+    /* Espaço extra na base do grid */
+}
+
+.about-item {
+    flex: 1;
+    min-width: 280px;
+    /* Garante largura mínima legível */
+    padding: 40px 25px 60px 25px;
+    /* Aumentado padding inferior para 60px para evitar corte */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza horizontalmente */
+    justify-content: flex-start;
+    /* Alinha ao topo mas permite crescer */
+    text-align: center;
+    /* transition simplificada, sem rotação */
+    transition: transform 0.3s ease, background 0.3s ease;
+    position: relative;
+    z-index: 1;
+    border: none;
+    /* Removido todas as bordas do item */
+}
+
+.about-item:last-child {
+    border-right: none;
+}
+
+
+.about-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateY(-5px);
+    /* Mantém apenas uma flutuação leve vertical, sem rotação */
+}
+
+.about-item:hover .about-icon {
+    /* Removido rotate */
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(163, 230, 53, 0.4);
+}
+
+.about-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    /* Altura/largura auto para não ocupar espaco excessivo invisivel */
+    height: auto;
+    padding: 10px;
+    /* Um pouco de padding para area de respiro */
+    margin-bottom: var(--spacing-md);
+    border-radius: 0;
+    background: transparent;
+    /* Transparente total */
+    border: none;
+    /* Sem borda */
+    box-shadow: none;
+    /* Sem sombra */
+    transition: all 0.4s ease;
+}
+
+.about-item:hover .about-icon-wrapper {
+    transform: scale(1.05);
+    border-color: transparent;
+    box-shadow: none;
+    background: transparent;
+}
+
+
+.about-icon-svg {
+    width: 40px;
+    height: 40px;
+    color: #e0e0e0;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.about-item:hover .about-icon-svg {
+    color: #ffd700;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+}
+
+.about-item-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: var(--spacing-sm);
+    transition: color 0.3s ease;
+}
+
+.about-item:hover .about-item-title {
+    color: #ffd700;
+}
+
+.about-item-desc {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Vertical Dividers */
+.about-divider {
+    width: 1px;
+    background: linear-gradient(to bottom,
+            transparent,
+            var(--color-border),
+            transparent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+    }
+
+    .about-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right,
+                transparent,
+                var(--color-border),
+                transparent);
+    }
+
+    .about-title {
+        font-size: 2.5rem;
+    }
+
+    .about-item {
+        padding: var(--spacing-lg);
+    }
+}
