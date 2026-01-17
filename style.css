@@ -588,6 +588,11 @@ h6 {
     background: var(--color-primary);
 }
 
+.video-section .section-title,
+.video-section .section-description {
+    color: var(--color-white);
+}
+
 .video-container {
     max-width: 900px;
     margin: 0 auto;
