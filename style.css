@@ -849,3 +849,125 @@ header {
     white-space: nowrap;
     border-width: 0;
 }
+
+/* ===================================
+   MOBILE RESPONSIVENESS FIXES
+   =================================== */
+
+@media (max-width: 768px) {
+
+    /* Header Layout */
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem 0;
+    }
+
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Hero Typography & Spacing */
+    .hero-content {
+        padding-top: 2rem;
+        /* Reduce top padding caused by taller header */
+        width: 95%;
+    }
+
+    .hero-title {
+        font-size: 2.2rem !important;
+        /* Force smaller size */
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* CTA Button - Stack content if needed or reduce size */
+    .cta-button {
+        width: 100%;
+        max-width: 320px;
+        padding: 1rem;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        white-space: normal;
+        /* Allow text wrapping */
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    /* Grid layout fixes - Force Single Column */
+    .about-grid,
+    .trust-grid,
+    .predictions-grid,
+    .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+
+    /* About Card Constraints */
+    .about-card {
+        width: 100%;
+        padding: 2rem 1rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .about-item {
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: var(--radius-md);
+    }
+
+    /* Video Section */
+    .video-section {
+        padding: 3rem 0;
+    }
+
+    .video-container {
+        width: 100%;
+    }
+
+    /* Predictions Cards */
+    .prediction-card {
+        padding: 1.5rem;
+    }
+
+    .match-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .team {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .vs-badge {
+        margin: 0.5rem 0;
+    }
+
+    /* Footer Stack */
+    .footer-container {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* General Padding */
+    .container {
+        padding: 0 1.5rem;
+    }
+}
