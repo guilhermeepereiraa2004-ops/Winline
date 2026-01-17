@@ -1003,9 +1003,12 @@ header {
     }
 
     .about-title {
-        font-size: clamp(2rem, 12vw, 3.5rem) !important;
+        font-size: clamp(1.8rem, 11vw, 3rem) !important;
         line-height: 1.1 !important;
-        word-wrap: break-word !important;
+        hyphens: none !important;
+        word-break: keep-all !important;
+        white-space: nowrap !important;
+        /* Tentar manter na mesma linha */
         width: 100% !important;
     }
 }
