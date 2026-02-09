@@ -1,0 +1,12 @@
+{
+    "name": "lopes-signals",
+    "version": "1.0.0",
+    "description": "Winline static website",
+    "main": "index.html",
+    "scripts": {
+        "start": "npx serve -l 5000 ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

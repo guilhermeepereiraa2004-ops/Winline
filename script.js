@@ -65,74 +65,29 @@ animatedElements.forEach(el => {
 });
 
 // ===================================
-// LANGUAGE SELECTOR
-// ===================================
-
-// ===================================
-// LANGUAGE TRANSLATION SYSTEM
+// LANGUAGE TRANSLATION SYSTEM (ES ONLY)
 // ===================================
 
 const translations = {
-    pt: {
-        header: { tagline: "Sua Casa de Apostas Profissional" },
-        hero: {
-            status: "Últimas vagas disponíveis",
-            title: { line1: "Não aposte às cegas,", highlight: "aposte com dados" },
-            desc: "Últimas vagas para acessar as previsões",
-            cta: "Junte-se à nossa comunidade exclusiva"
-        },
-        about: {
-            badge: "🌟 Bem-vindo",
-            subtitle: "Sua casa de apostas 100% legalizada na Europa, com total transparência e segurança para suas apostas.",
-            item1: { title: "93% de Acertos", desc: "Estratégias cuidadosamente analisadas por nossa equipe de especialistas profissionais." },
-            item2: { title: "Ganhos Consistentes", desc: "Desfrute de acesso a dicas VIP e um ambiente seguro para apostar com total confiança." },
-            item3: { title: "Nossa Missão", desc: "Ajudar você a maximizar seus resultados de forma responsável e profissional." }
-        },
-        video: { title: "Vídeo de Apresentação", desc: "Conheça mais sobre nossa plataforma e como podemos ajudá-lo a alcançar seus objetivos." },
-        predictions: { badge: "📊 Comprovado", title: "Nossos Resultados de Sucesso", desc: "Dicas e previsões vencedoras que geram lucros reais." },
-        footer: { copy: "© Copyright 2025 | WINLINE | Todos os direitos reservados.", warning: "⚠️ Jogue com responsabilidade. +18" }
-    },
-    en: {
-        header: { tagline: "Your Professional Betting Home" },
-        hero: {
-            status: "Last spots available",
-            title: { line1: "Don't bet blindly,", highlight: "bet with data" },
-            desc: "Last spots to access predictions",
-            cta: "Join our exclusive community"
-        },
-        about: {
-            badge: "🌟 Welcome",
-            subtitle: "Your 100% legalized betting house in Europe, with total transparency and safety for your bets.",
-            item1: { title: "93% Accuracy", desc: "Strategies carefully analyzed by our team of professional specialists." },
-            item2: { title: "Consistent Gains", desc: "Enjoy access to VIP tips and a safe environment to bet with total confidence." },
-            item3: { title: "Our Mission", desc: "To help you maximize your results responsibly and professionally." }
-        },
-        video: { title: "Presentation Video", desc: "Learn more about our platform and how we can help you achieve your goals." },
-        predictions: { badge: "📊 Proven Results", title: "Our Success Results", desc: "Winning tips and predictions that generate real profits." },
-        footer: { copy: "© Copyright 2025 | WINLINE | All rights reserved.", warning: "⚠️ Gamble responsibly. 18+" }
-    },
     es: {
-        header: { tagline: "Tu Casa de Apuestas Profesional" },
+        header: { tagline: "Su Casa de Apuestas Profesional" },
         hero: {
-            status: "Últimas plazas disponibles",
-            title: { line1: "No te apuestes a ciegas,", highlight: "apuesta con datos" },
-            desc: "Últimas plazas para acceder a las predicciones",
+            status: "Solo 23 plazas disponibles hoy",
+            title: { line1: "No apueste a ciegas,", highlight: "apueste con datos" },
+            desc: "Solo 23 plazas disponibles hoy — El grupo cierra a las 23:59h",
             cta: "Únete a nuestra comunidad exclusiva"
         },
         about: {
-            badge: "🌟 Bienvenido",
-            subtitle: "Tu casa de apuestas 100% legalizada en Europa, con total transparencia y seguridad para tus apuestas.",
-            item1: { title: "93% de Aciertos", desc: "Estrategias cuidadosamente analizadas por nuestro equipo de especialistas profesionales." },
-            item2: { title: "Ganancias Consistentes", desc: "Disfruta de acceso a consejos VIP y un entorno seguro para apostar con total confianza." },
-            item3: { title: "Nuestra Misión", desc: "Ayudarte a maximizar tus resultados de forma responsable y profesional." }
+            badge: "🚀 Estrategias Exclusivas",
+            subtitle: "Domine el mercado con inteligencia de datos y timing perfecto.",
+            item1: { title: "Timing Exacto", desc: "Cuándo apostar para maximizar ganancias." },
+            item2: { title: "Patrones Secretos", desc: "Cómo identificar cuándo la slot va a pagar." },
+            item3: { title: "Alertas en vivo", desc: "Recibe notificaciones de las mejores slots en el momento." },
+            item4: { title: "Grupo Privado", desc: "Comunidad exclusiva con +60.000 miembros." }
         },
-        video: { title: "Video de Presentación", desc: "Conoce más sobre nuestra plataforma y cómo podemos ayudarte a alcanzar tus objetivos." },
-        predictions: { badge: "📊 Comprobado", title: "Nuestros Resultados de Éxito", desc: "Consejos y predicciones ganadoras que generan ganancias reales." },
-        footer: { copy: "© Copyright 2025 | WINLINE | Todos los derechos reservados.", warning: "⚠️ Juega con responsabilidad. +18" }
+        footer: { copy: "© Copyright 2025 | LOPES SIGNALS | Todos los derechos reservados.", warning: "⚠️ Juegue con responsabilidad. +18" }
     }
 };
-
-const languageSelector = document.getElementById('language');
 
 function updateLanguage(lang) {
     if (!translations[lang]) return;
@@ -144,34 +99,15 @@ function updateLanguage(lang) {
         keys.forEach(k => { value = value ? value[k] : null; });
 
         if (value) {
-            // Apply subtle transition
-            el.style.transition = 'opacity 0.2s ease';
-            el.style.opacity = '0';
-
-            setTimeout(() => {
-                el.innerText = value;
-                el.style.opacity = '1';
-            }, 200);
+            el.innerText = value;
         }
     });
-
-    // Update HTML lang attribute
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : (lang === 'es' ? 'es-ES' : 'en-US');
 }
 
-if (languageSelector) {
-    languageSelector.addEventListener('change', (e) => {
-        const selectedLanguage = e.target.value;
-        console.log(`Language switching to: ${selectedLanguage}`);
-
-        // Visual feedback on selector
-        languageSelector.style.transform = 'scale(0.95)';
-        setTimeout(() => languageSelector.style.transform = 'scale(1)', 150);
-
-        // Execute translation
-        updateLanguage(selectedLanguage);
-    });
-}
+// Set initial language to Spanish
+document.addEventListener('DOMContentLoaded', () => {
+    updateLanguage('es');
+});
 
 // ===================================
 // CTA BUTTON TRACKING
@@ -239,150 +175,40 @@ if ('loading' in HTMLImageElement.prototype) {
 }
 
 // ===================================
-// VIDEO PLACEHOLDER INTERACTION
+// MEMBER NOTIFICATION POPUP
 // ===================================
 
-const videoPlaceholder = document.querySelector('.video-placeholder');
+function showMemberNotification() {
+    const notification = document.getElementById('member-notification');
+    if (notification) {
+        notification.classList.add('show');
 
-if (videoPlaceholder) {
-    videoPlaceholder.addEventListener('click', () => {
-        // Placeholder for future video implementation
-        console.log('Video placeholder clicked');
-
-        // Add a visual feedback
-        videoPlaceholder.style.transform = 'scale(0.98)';
+        // Auto hide after 6 seconds
         setTimeout(() => {
-            videoPlaceholder.style.transform = 'scale(1)';
-        }, 150);
-
-        // You could implement a modal with video here
-        alert('Vídeo em breve! Em desenvolvimento.');
-    });
+            notification.classList.remove('show');
+        }, 6000);
+    }
 }
 
-// ===================================
-// FEATURE CARDS STAGGER ANIMATION
-// ===================================
-
-const featureCards = document.querySelectorAll('.feature-card');
-featureCards.forEach((card, index) => {
-    card.style.animationDelay = `${index * 0.1}s`;
-});
-
-// ===================================
-// TRUST INDICATORS COUNTER ANIMATION
-// ===================================
-
-const animateCounter = (element, target, suffix = '') => {
-    const duration = 2000;
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target + suffix;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current) + suffix;
-        }
-    }, 16);
-};
-
-const trustNumbers = document.querySelectorAll('.trust-number');
-const trustObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.dataset.animated) {
-            const text = entry.target.textContent;
-            const number = parseInt(text);
-            const suffix = text.replace(number, '');
-
-            if (!isNaN(number)) {
-                animateCounter(entry.target, number, suffix);
-                entry.target.dataset.animated = 'true';
-            }
-        }
-    });
-}, { threshold: 0.5 });
-
-trustNumbers.forEach(num => trustObserver.observe(num));
-
-// ===================================
-// ACCESSIBILITY ENHANCEMENTS
-// ===================================
-
-// Add keyboard navigation for cards
-const interactiveCards = document.querySelectorAll('.feature-card, .result-card');
-interactiveCards.forEach(card => {
-    card.setAttribute('tabindex', '0');
-
-    card.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            card.click();
-        }
-    });
-});
+// Initial show after 10 seconds, then every 60 seconds
+setTimeout(() => {
+    showMemberNotification();
+    setInterval(showMemberNotification, 60000);
+}, 10000);
 
 // ===================================
 // CONSOLE BRANDING
 // ===================================
 
 console.log(
-    '%cWINLINE',
-    'font-size: 3rem; font-weight: bold; color: #e6e6e6; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);'
+    '%cLOPES SIGNALS',
+    'font-size: 3rem; font-weight: bold; color: #2563eb; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);'
 );
 console.log(
-    '%cSua Casa de Apostas Profissional',
+    '%cEstratégias Exclusivas & Timing Perfeito',
     'font-size: 1rem; color: #999999; font-style: italic;'
 );
 console.log(
-    '%c© 2025 WINLINE. Todos os direitos reservados.',
+    '%c© 2025 LOPES SIGNALS. Todos los derechos reservados.',
     'font-size: 0.75rem; color: #666666;'
 );
-
-// ===================================
-// INITIALIZATION
-// ===================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('WINLINE website loaded successfully');
-
-    // Add loaded class to body for CSS animations
-    document.body.classList.add('loaded');
-
-    // Preload critical resources
-    const preloadLinks = [
-        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap'
-    ];
-
-    preloadLinks.forEach(href => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'style';
-        link.href = href;
-        document.head.appendChild(link);
-    });
-});
-
-// ===================================
-// ERROR HANDLING
-// ===================================
-
-window.addEventListener('error', (e) => {
-    console.error('An error occurred:', e.error);
-    // You could send this to an error tracking service
-});
-
-// ===================================
-// SERVICE WORKER REGISTRATION (Optional)
-// ===================================
-
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        // Uncomment when you have a service worker file
-        // navigator.serviceWorker.register('/sw.js')
-        //     .then(reg => console.log('Service Worker registered'))
-        //     .catch(err => console.log('Service Worker registration failed'));
-    });
-}
